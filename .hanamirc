@@ -1,0 +1,3 @@
+project=parsi
+test=rspec
+template=erb
