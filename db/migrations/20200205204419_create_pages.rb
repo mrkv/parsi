@@ -6,8 +6,8 @@ Hanami::Model.migration do
     create_table :pages do
       primary_key :id
 
-      column :url,  String, null: false
-      column :title, String, null: false
+      column :url,  String, null: false, unique: true
+      column :title, String
       column :status, 'pages_statuses', null: false
 
       column :created_at, DateTime, null: false
