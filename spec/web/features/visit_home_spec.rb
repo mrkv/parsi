@@ -11,7 +11,7 @@ RSpec.describe 'Visit home' do
   end
 
   it 'displays each page' do
-    visit '/'
+    visit '/?urls[]=https://guides.hanamirb.org/&urls[]=https://www.sitepoint.com/threads-ruby/'
 
     within '#pages' do
       expect(page).to have_selector('.page', count: 2), 'Expected to find 2 pages'

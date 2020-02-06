@@ -9,12 +9,14 @@ class ParsePages
   end
 
   def call(pages_attributes)
-    pages = %w( https://habr.com/en/ https://www.google.com/ )
+    return unless pages_attributes
+
+    @repository.clear
 
     threads = []
     fetched_pages = []
 
-    for page_to_fetch in pages
+    for page_to_fetch in pages_attributes
       threads << Thread.new(page_to_fetch) do |url|
         puts "Fetching: #{url}"
 

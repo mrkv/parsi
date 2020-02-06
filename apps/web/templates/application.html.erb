@@ -3,8 +3,21 @@
   <head>
     <title>Web</title>
     <%= favicon %>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
   </head>
   <body>
-    <%= yield %>
+    <div class="uk-container uk-container-large">
+      <nav class="uk-navbar-container uk-margin" uk-navbar>
+        <div class="uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="#">Pages</a>
+        </div>
+      </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>
