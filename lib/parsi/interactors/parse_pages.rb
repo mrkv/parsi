@@ -17,7 +17,7 @@ class ParsePages
     threads = []
     fetched_pages = []
 
-    for page_to_fetch in pages_attributes
+    pages_attributes.each do |page_to_fetch|
       # NOTE: We're using Ruby Threads instead of third-party libraries for demo purposes
       #   For each URL we create new thread. Using too many threads can destroy system resources
       #   To keep things simple, we won't implement our own Thread Pool
@@ -29,10 +29,12 @@ class ParsePages
           title = open(url).read.scan(/<title>(.*?)<\/title>/)[0][0]
           puts "Got #{url}: #{title}"
 
-          fetched_page = { url: url, title: title, status: 'processed' }
+          status = 'processed'
         rescue Exception => e
-          fetched_page = { url: url, title: title, status: 'failed' }
+          status = 'failed'
         end
+
+        fetched_page = Page.new(url: url, title: title, status: status)
         fetched_pages.push(fetched_page)
       end
     end
