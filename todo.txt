@@ -10,6 +10,7 @@ Heroku deployment - fix DB issue
 Docker & Docker compose
 Скрипты запуска приложения
 Rubocop
+Fix Ruby version
 
 # DONE:
 Сортировать массив ссылок по уникальности

@@ -23,12 +23,16 @@ class ParsePages
       #   To keep things simple, we won't implement our own Thread Pool
       #   For Production consider using libraries like Celluloid, Concurrent Ruby, Parallel, etc. with built-in Thread Pool
       threads << Thread.new(page_to_fetch) do |url|
-        puts "Fetching: #{url}"
+        begin
+          puts "Fetching: #{url}"
 
-        title = open(url).read.scan(/<title>(.*?)<\/title>/)[0][0]
-        puts "Got #{url}: #{title}"
+          title = open(url).read.scan(/<title>(.*?)<\/title>/)[0][0]
+          puts "Got #{url}: #{title}"
 
-        fetched_page = { url: url, title: title, status: 'processed' }
+          fetched_page = { url: url, title: title, status: 'processed' }
+        rescue Exception => e
+          fetched_page = { url: url, title: title, status: 'failed' }
+        end
         fetched_pages.push(fetched_page)
       end
     end
