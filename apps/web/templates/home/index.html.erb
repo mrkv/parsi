@@ -1,4 +1,12 @@
-<table class="uk-table uk-table-hover uk-table-divider">
+<div class="uk-alert-warning uk-padding-small" uk-alert>
+  <h3>Usage</h3>
+  <p>
+    Pass an array of links to fetch in an address bar, for example,
+    <%= link_to default_link_params, default_link_params %>
+  </p>
+</div>
+
+<table class="uk-table uk-table-hover uk-table-divider uk-table-justify">
   <thead>
     <tr>
       <th>URL</th>
@@ -9,8 +17,12 @@
   <tbody>
     <% pages.each do |page| %>
       <tr id="books">
-        <td><%= page.url %></td>
-        <td><%= page.title %></td>
+        <td>
+          <%= link_to page.url, page.url, class: 'uk-link-muted', target: '_blank' %>
+        </td>
+        <td>
+          <%= page.title %>
+        </td>
         <td>
           <%= status_label(page) %>
         </td>

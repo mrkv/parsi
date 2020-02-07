@@ -11,6 +11,12 @@ module Web
             </span>
           )
         end
+
+        def default_link_params
+          raw %(
+            ?urls[]=https://www.postgresqltutorial.com/postgresql-upsert/&urls[]=https://getuikit.com/docs/alert&urls[]=https://guides.hanamirb.org/helpers/links/#usage
+          )
+        end
       end
     end
   end
