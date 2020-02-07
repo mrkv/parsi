@@ -1,6 +1,13 @@
 # Parsi
 
-Welcome to your new Hanami project!
+This project demonstrates:
+
+- Usage of Hanami for creating simple web apps
+- Dockerizing Hanami apps
+- The way of testing Hanami apps
+- Working with Ruby threads
+- Ruby threads exception handling
+- Creating records in bulk in Hanami
 
 ## Setup
 
