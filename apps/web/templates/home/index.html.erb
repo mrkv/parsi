@@ -2,7 +2,7 @@
   <h3>Usage</h3>
   <p>
     Pass an array of links to fetch in an address bar, for example,
-    <%= link_to default_link_params, default_link_params %>
+    <%= link_to default_link_params, default_link_params, class: 'uk-overlay-hover' %>
   </p>
 </div>
 
@@ -21,7 +21,7 @@
           <%= link_to page.url, page.url, class: 'uk-link-muted', target: '_blank' %>
         </td>
         <td>
-          <%= page.title %>
+          <%= page_title(page) %>
         </td>
         <td>
           <%= status_label(page) %>

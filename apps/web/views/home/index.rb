@@ -4,6 +4,20 @@ module Web
       class Index
         include Web::View
 
+        def page_title(page)
+          if page.status == 'processed'
+            raw %(
+              #{page.title}
+            )
+          else
+            raw %(
+              <span class="uk-text-danger">
+                oops! something went wrong
+              </span>
+            )
+          end
+        end
+
         def status_label(page)
           raw %(
             <span class="uk-label uk-label-#{page.status == 'processed' ? 'success' : 'danger'}">

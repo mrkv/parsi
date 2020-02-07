@@ -1,4 +1,5 @@
 require 'hanami/interactor'
+# NOTE: We're using standard Ruby library for page fetches instead third-party ones
 require 'open-uri'
 
 class ParsePages
@@ -10,8 +11,8 @@ class ParsePages
 
   def call(pages_attributes)
     return unless pages_attributes
-
-    @repository.clear
+    # NOTE: Filter out unique URLs
+    pages_attributes.uniq!
 
     threads = []
     fetched_pages = []
@@ -31,6 +32,7 @@ class ParsePages
     threads.each {|thr| thr.join }
 
     puts fetched_pages
+    @repository.clear
     @pages = @repository.create_many(fetched_pages)
   end
 end
