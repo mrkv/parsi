@@ -12,15 +12,7 @@
         <td><%= page.url %></td>
         <td><%= page.title %></td>
         <td>
-          <% if page.status == 'processed' %>
-            <span class="uk-label uk-label-success">
-              <%= page.status %>
-            </span>
-          <% else %>
-            <span class="uk-label uk-label-danger">
-              <%= page.status %>
-            </span>
-          <% end %>
+          <%= status_label(page) %>
         </td>
       </tr>
     <% end %>
