@@ -11,6 +11,7 @@ class ParsePages
 
   def call(pages_attributes)
     return unless pages_attributes
+
     # NOTE: Filter out duplicate URLs
     pages_attributes.uniq!
 
@@ -29,9 +30,9 @@ class ParsePages
           title = open(url).read.scan(/<title>(.*?)<\/title>/)[0][0]
           puts "Got #{url}: #{title}"
 
-          status = 'processed'
+          status = PageRepository::Status::PROCESSED
         rescue Exception => e
-          status = 'failed'
+          status = PageRepository::Status::FAILED
         end
 
         fetched_page = Page.new(url: url, title: title, status: status)

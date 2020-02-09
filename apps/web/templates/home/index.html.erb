@@ -13,7 +13,7 @@
   </p>
 </div>
 
-<table class="uk-table uk-table-hover uk-table-divider uk-table-justify">
+<table class="uk-table uk-table-hover uk-table-divider uk-table-justify" id="pages">
   <thead>
     <tr>
       <th>URL</th>
@@ -23,7 +23,7 @@
   </thead>
   <tbody>
     <% pages.each do |page| %>
-      <tr id="books">
+      <tr class="page">
         <td>
           <%= link_to page.url, page.url, class: 'uk-link-muted', target: '_blank' %>
         </td>

@@ -5,7 +5,7 @@ module Web
         include Web::View
 
         def page_title(page)
-          if page.status == 'processed'
+          if page.status == PageRepository::Status::PROCESSED
             raw %(
               #{page.title}
             )
@@ -20,7 +20,7 @@ module Web
 
         def status_label(page)
           raw %(
-            <span class="uk-label uk-label-#{page.status == 'processed' ? 'success' : 'danger'}">
+            <span class="uk-label uk-label-#{page.status == PageRepository::Status::PROCESSED ? 'success' : 'danger'}">
               #{page.status}
             </span>
           )

@@ -10,11 +10,7 @@ module Web
        end
 
         def call(params)
-          if params.valid?
-            ParsePages.new.call(params[:urls])
-          else
-            self.status = 422
-          end
+          ParsePages.new.call(params[:urls])
 
           repository = PageRepository.new
           @pages = repository.all
