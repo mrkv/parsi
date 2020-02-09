@@ -1,9 +1,12 @@
 # Parsi
 
+This simple Hanami application has one endpoint receiving only parameter.
+
+Receiving "urls" array parameter it fetches pages titles in parallel using Ruby Threads and persists in in database.
+
 This project demonstrates:
 
-- Usage of Hanami for creating simple web apps
-- Dockerizing Hanami apps
+- Usage of Hanami for creating web apps
 - The way of testing Hanami apps
 - Working with Ruby threads
 - Ruby threads exception handling
@@ -11,23 +14,7 @@ This project demonstrates:
 
 ## Setup
 
-How to run tests:
-
-```
-% bundle exec rake
-```
-
-How to run the development console:
-
-```
-% bundle exec hanami console
-```
-
-How to run the development server:
-
-```
-% bundle exec hanami server
-```
+Clone this repo and do `bundle install`.
 
 How to prepare (create and migrate) DB for `development` and `test` environments:
 
@@ -37,4 +24,14 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 % HANAMI_ENV=test bundle exec hanami db prepare
 ```
 
-Explore Hanami [guides](https://guides.hanamirb.org/), [API docs](http://docs.hanamirb.org/1.3.3/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸
+How to run the development server:
+
+```
+% bundle exec hanami server
+```
+
+How to run tests:
+
+```
+% bundle exec rspec
+```
