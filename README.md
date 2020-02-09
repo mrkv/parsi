@@ -40,6 +40,6 @@ How to run tests:
 
 ## Usage
 
-Run server, open your favorite browser and pass the links you desire to fetch:
+Run server, open your favorite browser and pass the links you desire to fetch, like this:
 
 http://localhost:2300/?urls[]=https://google.com&urls[]=https://yandex.ru
