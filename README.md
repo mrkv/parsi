@@ -2,7 +2,7 @@
 
 This simple Hanami application has one endpoint receiving array of URLs as a parameter.
 
-It fetches pages titles in parallel using Ruby Threads and persists them in a database.
+It fetches pages titles in parallel using Ruby Threads, persists them in a database and shows status on an endpoint.
 
 This project demonstrates:
 
@@ -35,3 +35,9 @@ How to run tests:
 ```
 % bundle exec rspec
 ```
+
+## Usage
+
+Run server, open your favorite browser and pass the links you desire to fetch:
+
+http://localhost:2300/?urls[]=https://google.com&urls[]=https://yandex.ru
