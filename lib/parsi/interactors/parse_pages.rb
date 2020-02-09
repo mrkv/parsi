@@ -10,7 +10,7 @@ class ParsePages
   end
 
   def call(pages_attributes)
-    return unless pages_attributes
+    return unless pages_attributes && pages_attributes.kind_of?(Array)
 
     # NOTE: Filter out duplicate URLs
     pages_attributes.uniq!
